@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Diamond Casino Resort</title>
+    <link rel="icon" href="./imgs/Casino_Icon.png">
+    <link rel="stylesheet" href="./home.css">
+    </link>
+</head>
+
+<body>
+    <div id="ajuste">
+        <img id="logo" src="./imgs/Casino_Logo.png">
+        <div class="topButtons">
+            <button onclick="botao('INÍCIO')">INÍCIO</button>
+            <button onclick="botao('AFILIAÇÃO')">AFILIAÇÃO</button>
+            <button onclick="botao('ASPENTHOUSES')">AS PENTHOUSES</button>
+            <button onclick="botao('OCASINO')">O CASSINO</button>
+            <button onclick="botao('LOJADOCASSINO')">LOJA DO CASSINO</button>
+        </div>
+    </div>
+    <div class="background" id="INÍCIO">
+        <div class="fade">
+            <div class="desc">
+                <p id="p1">Uma Experiência Sublime</p>
+                <p id="p2">Um cassino e resort de luxo no coração de Vinewood</p>
+                <p id="p3">Você já ouviu os boatos. Quer acreditar neles, mas só há uma maneira de ter certeza. Abandone
+                    todas
+                    as suas preconcepções. Deixe de lado suas inibições, suas dúvidas, seu senso de proporção, sua
+                    avaliação de crédito. Os boatos não chegam perto da realidade. Boas-vindas ao Diamond.</p>
+            </div>
+        </div>
+    </div>
+    <div class="background" id="AFILIAÇÃO">
+        Você já é um afiliado nosso. Acesse <b>O CASSINO</b> para aproveitar todas as suas vantagens de afiliado.
+    </div>
+    <div class="background" id="ASPENTHOUSES"></div>
+    <div class="background" id="OCASINO">
+        <div class="select">
+        <div class="text">
+            Escolha um jogo e faça sua aposta online!
+        </div>
+        <div class="buttons">
+            <button><img id="imgButton" src="./imgs/TIGRIN_Icon.png"></button>
+            <button><img id="imgButton" src="./imgs/BlackJack_Icon.png"></button>
+            <a href="./home.css">
+            <button href="./home.css"><img id="imgButtonReal" src="./imgs/Corrida_Icon.png"></button>
+            </a>
+            <button><img id="imgButton" src="./imgs/777_Icon.png"></button>
+            <button><img id="imgButton" src="./imgs/Blaze_Icon.png"></button>
+        </div>
+    </div>
+    </div>
+    <div class="background" id="LOJADOCASSINO">
+        <div id="mens">
+            Ainda não é possível realizar compras em nossa loja online. Visite-nos pessoalmente.
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    function botao(id) {
+        document.querySelectorAll('.background').forEach(bg => {
+            bg.style.display = 'none';
+        });
+
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'flex';
+    }
+</script>

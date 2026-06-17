@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.background, .background2 {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#INÍCIO{
+    background-image: url(./imgs/Home_Background.png);
+    display: flex;
+}
+#AFILIAÇÃO{
+    background-image: url(./imgs/Afiliação_Background.gif);
+    display: none;
+}
+#ASPENTHOUSES{
+    background-image: url(./imgs/Penthouse_Background.png);
+    display: none;
+}
+#OCASINO{
+    background-image: url(./imgs/Cassino_Background.png);
+    display: none;
+}
+#LOJADOCASSINO{
+    background-image: url(./imgs/Loja_Background.png);
+    display: none;
+}
+.fade {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.8) 1%,
+            rgba(70, 0, 128, 0.623) 20%,
+            rgba(128, 0, 128, 0) 79%);
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+}
+
+#ajuste {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    height: 150px;
+}
+
+#logo {
+    width: 250px;
+    height: 150px;
+}
+
+button {
+    position: relative;
+    background: none;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0%;
+    height: 5px;
+    background: white;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+button:hover::before {
+    width: 100%;
+}
+
+.topButtons {
+    display: flex;
+    justify-content: center;
+    width: 910px;
+    height: 40px;
+    gap: 10px;
+    background: linear-gradient(to right,
+            rgba(15, 15, 15, 0.1),
+            rgb(15, 15, 15));
+}
+
+.desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    color: white;
+    gap: 10px;
+    margin-top: auto;
+}
+
+#p1 {
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 30px;
+    border-left: 3px solid white;
+    padding: 20px;
+}
+
+#p2 {
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 30px;
+}
+
+#p3 {
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+#AFILIAÇÃO{
+    align-items: center;
+    justify-content: center;
+    color:white;
+    font-size: 30px;
+}
+#OCASINO{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+.select {
+    display: flex;
+    width: 1000px;
+    height: 600px;
+    background-color: rgba(15, 15, 15, 0.932);
+    flex-direction: column;
+    align-items: center;
+}
+.text {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 100px;
+}
+.buttons {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: 100px;
+    gap: 25px;
+}
+#imgButton, #imgButtonReal{
+    width: 150px;
+    height: 150px;
+}
+#imgButton:active {
+    background-color: red;
+}
+#LOJADOCASSINO{
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: white;
+}
+b{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#mens{
+    background: linear-gradient(to right,
+            rgba(15, 15, 15, 0.7),
+            rgb(15, 15, 15));
+    padding: 5px;
+}
