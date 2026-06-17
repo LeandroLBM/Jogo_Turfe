@@ -23,8 +23,16 @@
 
 #CORRIDA {
     background-image: url(./imgs/Corrida_Background.gif);
+    display: none;
+    align-items: center;
+    flex-direction: column;
+}
+
+#PODIO {
+    background-image: url(./imgs/Podio_Gif.gif);
     display: flex;
 }
+
 input {
     height: 70px;
     width: 350px;
@@ -34,11 +42,13 @@ input {
     font-size: 20px;
     text-align: center;
 }
+
 input::placeholder {
     color: white;
     font-size: 20px;
     text-align: center;
 }
+
 button {
     width: 200px;
     color: white;
@@ -47,10 +57,12 @@ button {
     font-size: 25px;
     cursor: pointer;
 }
+
 button:hover {
     background-color: white;
     color: rgba(15, 15, 15, 0.932);
 }
+
 button:active {
     color: white;
     background-color: rgba(15, 15, 15, 0.932);
@@ -70,6 +82,7 @@ button:active {
     align-items: center;
     justify-content: center;
 }
+
 input#ipt_jogador1,
 input#ipt_jogador2,
 input#ipt_jogador3 {
@@ -77,11 +90,13 @@ input#ipt_jogador3 {
     margin-top: 10px;
     font-weight: bold;
 }
+
 input#qtd_voltas,
 input#qtd_cavalos {
     width: 300px;
     height: 30px;
 }
+
 .configJogo {
     display: flex;
     width: 500px;
@@ -153,10 +168,12 @@ input#qtd_cavalos {
     justify-content: center;
     gap: 25px;
 }
+
 #IconCavalo {
     width: 75px;
     height: 75px;
 }
+
 .jogadorAposta {
     display: flex;
     background-color: rgba(15, 15, 15, 0.932);
@@ -168,7 +185,78 @@ input#qtd_cavalos {
     flex-direction: column;
     gap: 100px;
 }
+
 #jogadoresAposta {
     display: flex;
     gap: 50px;
+}
+
+/* CORRIDA */
+
+.placar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    width: 600px;
+    height: 200px;
+    background-color: rgba(15, 15, 15, 0.932);
+    color: white;
+    text-align: center;
+    font-size: 25px;
+}
+
+.corredor {
+    margin-top: 10px;
+}
+
+.corrida {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right,
+            rgb(0, 110, 28),
+            rgb(121, 113, 0));
+    width: 100vw;
+    height: 625px;
+    margin-top: auto;
+    overflow: hidden;
+}
+
+.cavaloCorrida {
+    position: relative;
+    left: 0;
+    transition: left linear;
+}
+
+#CavaloCorrendo {
+    width: 100px;
+    height: 100px;
+}
+
+#linhasVoltas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.linhaVolta {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background-color: red;
+    z-index: 1;
+}
+
+.linhaVolta::before {
+    content: attr(data-volta);
+    position: absolute;
+    top: 5px;
+    left: -20px;
+    background: red;
+    color: white;
+    padding: 2px 5px;
+    font-size: 12px;
 }

@@ -7,7 +7,7 @@
     <title>The Diamond Casino Resort</title>
     <link rel="icon" href="../home/imgs/Casino_Icon.png">
     <link rel="stylesheet" href="./jogo.css">
-    <link rel="stylesheet" href="./jogo.js">
+    <script src="./jogo.js"></script>
     </link>
 </head>
 
@@ -35,11 +35,11 @@
                 <button onclick="addJogador()">Adcionar Jogadores</button>
                 <div id="voltas" style="display: flex; flex-direction: column; text-align: center;">
                     Quantidade de voltas
-                    <input type="number" id="qtd_voltas" placeholder="1" min="1">
+                    <input type="number" id="qtd_voltas" value="1" placeholder="1" min="1">
                 </div>
                 <div id="cavalos" style="display: flex; flex-direction: column; text-align: center;">
                     Quantidade de Cavalos
-                    <input type="number" id="qtd_cavalos" placeholder="Mínimo 1 e Máximo 6" min="1" max="6">
+                    <input type="number" id="qtd_cavalos" placeholder="Mínimo 2 e Máximo 6" min="1" max="6">
                 </div>
                 <button onclick="apostar('APOSTA')">apostar</button>
             </div>
@@ -50,32 +50,32 @@
         <div class="fadeAposta">
             <div class="cavalosAposta">
                 <div class="cavalo" id="1">
-                    <img id="IconCavalo"src="./imgs/Cavalo_Preto_Icon.png">
-                <input type="text" id="ipt_nomeCavalo1" placeholder="Destruidor de Sonhos">
+                    <img id="IconCavalo" src="./imgs/Cavalo_Preto_Icon.png">
+                    <input type="text" id="ipt_nomeCavalo1" placeholder="Destruidor de Sonhos">
                 </div>
                 <div class="cavalo" id="2">
                     <img id="IconCavalo" src="./imgs/Cavalo_Branco_Icon.png">
-                <input type="text" id="ipt_nomeCavalo2" placeholder="Sr. Vale a Pena">
+                    <input type="text" id="ipt_nomeCavalo2" placeholder="Sr. Vale a Pena">
                 </div>
                 <div class="cavalo" id="3">
                     <img id="IconCavalo" src="./imgs/Cavalo_Roxo_Icon.png">
-                <input type="text" id="ipt_nomeCavalo3" placeholder="Inferno pelo Clima">
+                    <input type="text" id="ipt_nomeCavalo3" placeholder="Inferno pelo Clima">
                 </div>
                 <div class="cavalo" id="4">
                     <img id="IconCavalo" src="./imgs/Cavalo_Verde_Icon.png">
-                <input type="text" id="ipt_nomeCavalo4" placeholder="Dinheiro Fácil/Idiota">
+                    <input type="text" id="ipt_nomeCavalo4" placeholder="Dinheiro Fácil/Idiota">
                 </div>
                 <div class="cavalo" id="5">
                     <img id="IconCavalo" src="./imgs/Cavalo_Vermelho_Icon.png">
-                <input type="text" id="ipt_nomeCavalo5" placeholder="Quente e Incomodado">
+                    <input type="text" id="ipt_nomeCavalo5" placeholder="Quente e Incomodado">
                 </div>
                 <div class="cavalo" id="6">
                     <img id="IconCavalo" src="./imgs/Cavalo_Amarelo_Icon.png">
-                <input type="text" id="ipt_nomeCavalo6" placeholder="Pangaré Magrelo">
+                    <input type="text" id="ipt_nomeCavalo6" placeholder="Pangaré Magrelo">
                 </div>
             </div>
             <div class="jogadorAposta">
-                    <div id="jogadoresAposta">
+                <div id="jogadoresAposta">
                     <div class="jogador" id="jogador1" style="display: flex;">
                         <img src="./imgs/Jogaror_Icon.png" id="jogadorImage" style="width: 100px; height: 100px;">
                         <div id="nomeJogadorAposta1" style="color: white; margin-bottom: 10px;">Grupo1</div>
@@ -98,7 +98,77 @@
     </div>
 
     <div class="background" id="CORRIDA">
-        
+        <div class="placar">
+            <div class="corredor" id="1">
+                <img id="IconCavalo" src="./imgs/Cavalo_Preto_Icon.png">
+                <div id="tempo" id="1"></div>
+            </div>
+            <div class="corredor" id="2">
+                <img id="IconCavalo" src="./imgs/Cavalo_Branco_Icon.png">
+                <div id="tempo" id="2"></div>
+            </div>
+            <div class="corredor" id="3">
+                <img id="IconCavalo" src="./imgs/Cavalo_Roxo_Icon.png">
+                <div id="tempo" id="3"></div>
+            </div>
+            <div class="corredor" id="4">
+                <img id="IconCavalo" src="./imgs/Cavalo_Verde_Icon.png">
+                <div id="tempo" id="4"></div>
+            </div>
+            <div class="corredor" id="5">
+                <img id="IconCavalo" src="./imgs/Cavalo_Vermelho_Icon.png">
+                <div id="tempo" id="5"></div>
+            </div>
+            <div class="corredor" id="6">
+                <img id="IconCavalo" src="./imgs/Cavalo_Amarelo_Icon.png">
+                <div id="tempo" id="6"></div>
+            </div>
+        </div>
+        <div class="corrida">
+            <div id="linhasVoltas"></div>
+            <div class="cavaloCorrida" id="1">
+                <img id="CavaloCorrendo" src="./imgs/horse-gallop.gif" style="transform: scaleX(-1);">
+            </div>
+            <div class="cavaloCorrida" id="2">
+                <img id="CavaloCorrendo" src="./imgs/Cavalo_Branco.gif" style="transform: scaleX(-1);">
+            </div>
+            <div class="cavaloCorrida" id="3">
+                <img id="CavaloCorrendo" src="./imgs/Cavalo_Roxo.gif" style="transform: scaleX(-1);">
+            </div>
+            <div class="cavaloCorrida" id="4">
+                <img id="CavaloCorrendo" src="./imgs/Cavalo_Verde.gif" style="transform: scaleX(-1);">
+            </div>
+            <div class="cavaloCorrida" id="5">
+                <img id="CavaloCorrendo" src="./imgs/Cavalo_Vermelho.gif" style="transform: scaleX(-1);">
+            </div>
+            <div class="cavaloCorrida" id="6">
+                <img id="CavaloCorrendo" src="./imgs/Cavalo_Amarelo.gif" style="transform: scaleX(-1);">
+            </div>
+        </div>
+    </div>
+
+    <div class="background" id="PODIO">
+        <div class="podio">
+            <h1>PÓDIO</h1>
+            <div class="podioTop3">
+                <div class="lugar" id="primeiro">
+                    <h2>🥇 1º Lugar</h2>
+                    <p class="nome"></p>
+                    <p class="tempo"></p>
+                </div>
+                <div class="lugar" id="segundo">
+                    <h2>🥈 2º Lugar</h2>
+                    <p class="nome"></p>
+                    <p class="tempo"></p>
+                </div>
+                <div class="lugar" id="terceiro">
+                    <h2>🥉 3º Lugar</h2>
+                    <p class="nome"></p>
+                    <p class="tempo"></p>
+                </div>
+            </div>
+            <div class="apostas" id="apostas"></div>
+        </div>
     </div>
 </body>
 
