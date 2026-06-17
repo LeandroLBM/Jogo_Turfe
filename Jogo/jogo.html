@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Diamond Casino Resort</title>
+    <link rel="icon" href="../home/imgs/Casino_Icon.png">
+    <link rel="stylesheet" href="./jogo.css">
+    <link rel="stylesheet" href="./jogo.js">
+    </link>
+</head>
+
+<body>
+    <div class="background" id="CONFIG">
+        <div class="fade">
+            <div class="configJogo">
+                <div id="jogadores">
+                    <div class="jogador" id="jogador1" style="display: flex;">
+                        <img src="./imgs/Jogaror_Icon.png" id="jogadorImage" style="width: 100px; height: 100px;">
+                        500
+                        <input type="text" id="ipt_jogador1" placeholder="Jogador1" style="width: 100px;">
+                    </div>
+                    <div class="jogador" id="jogador2" style="display: none;">
+                        <img src="./imgs/Jogaror_Icon.png" id="jogadorImage" style="width: 100px; height: 100px;">
+                        500
+                        <input type="text" id="ipt_jogador2" placeholder="Jogador2" style="width: 100px;">
+                    </div>
+                    <div class="jogador" id="jogador3" style="display: none;">
+                        <img src="./imgs/Jogaror_Icon.png" id="jogadorImage" style="width: 100px; height: 100px;">
+                        500
+                        <input type="text" id="ipt_jogador3" placeholder="Jogador3" style="width: 100px;">
+                    </div>
+                </div>
+                <button onclick="addJogador()">Adcionar Jogadores</button>
+                <div id="voltas" style="display: flex; flex-direction: column; text-align: center;">
+                    Quantidade de voltas
+                    <input type="number" id="qtd_voltas" placeholder="1" min="1">
+                </div>
+                <div id="cavalos" style="display: flex; flex-direction: column; text-align: center;">
+                    Quantidade de Cavalos
+                    <input type="number" id="qtd_voltas" placeholder="Mínimo 1 e Máximo 6" min="1" max="6">
+                </div>
+                <button onclick="apostar('APOSTA')">apostar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="background" id="APOSTA">
+        <div class="fadeAposta">
+            <div class="cavalosAposta"></div>
+            <div class="jogadorAposta"></div>
+        </div>
+    </div>
+</body>
+
+</html>

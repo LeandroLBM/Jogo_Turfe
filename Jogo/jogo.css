@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#CONFIG {
+    background-image: url(./imgs/Casino_Background.jpg);
+    display: none;
+}
+
+#APOSTA {
+    background-image: url(./imgs/Aposta_Background.png);
+    display: flex;
+}
+
+.fade {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.8) 1%,
+            rgba(128, 0, 0, 0.623) 20%,
+            rgba(128, 0, 128, 0) 79%);
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    width: 200px;
+    color: white;
+    background-color: rgba(15, 15, 15, 0.932);
+    border: solid white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    color: rgba(15, 15, 15, 0.932);
+}
+
+button:active {
+    color: white;
+    background-color: rgba(15, 15, 15, 0.932);
+}
+
+.configJogo {
+    display: flex;
+    width: 500px;
+    height: 600px;
+    border: solid white;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(15, 15, 15, 0.932);
+    color: white;
+    gap: 50px;
+}
+
+#jogadores {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.jogador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border: solid white;
+    flex-direction: column;
+    font-weight: bold;
+    color: lightgreen;
+}
+
+/*APOSTA*/
+
+.fadeAposta {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.8) 1%,
+            rgba(77, 0, 128, 0.623) 20%,
+            rgba(128, 0, 128, 0) 79%);
+    background-size: cover;
+    background-position: center;
+    flex-direction: row;
+    gap: 300px;
+    justify-content: center;
+}
+
+.cavalosAposta {
+    display: flex;
+    background-color: rgba(15, 15, 15, 0.932);
+    width: 600px;
+    height: 700px;
+    margin-top: 100px;
+}
+
+.jogadorAposta {
+    display: flex;
+    background-color: rgba(15, 15, 15, 0.932);
+    width: 700px;
+    height: 400px;
+    margin-top: 100px;
+}
