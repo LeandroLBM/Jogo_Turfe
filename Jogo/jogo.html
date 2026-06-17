@@ -41,7 +41,7 @@
                     Quantidade de Cavalos
                     <input type="number" id="qtd_cavalos" placeholder="Mínimo 2 e Máximo 6" min="1" max="6">
                 </div>
-                <button onclick="apostar('APOSTA')">apostar</button>
+                <button onclick="apostar()">apostar</button>
             </div>
         </div>
     </div>
@@ -92,7 +92,7 @@
                         500
                     </div>
                 </div>
-                <button onclick="jogar('CORRIDA')">Jogar</button>
+                <button onclick="iniciarCorrida()">Jogar</button>
             </div>
         </div>
     </div>
@@ -152,17 +152,17 @@
             <h1>PÓDIO</h1>
             <div class="podioTop3">
                 <div class="lugar" id="primeiro">
-                    <h2>🥇 1º Lugar</h2>
+                    <h2>🥇Lugar</h2>
                     <p class="nome"></p>
                     <p class="tempo"></p>
                 </div>
                 <div class="lugar" id="segundo">
-                    <h2>🥈 2º Lugar</h2>
+                    <h2>🥈Lugar</h2>
                     <p class="nome"></p>
                     <p class="tempo"></p>
                 </div>
                 <div class="lugar" id="terceiro">
-                    <h2>🥉 3º Lugar</h2>
+                    <h2>🥉Lugar</h2>
                     <p class="nome"></p>
                     <p class="tempo"></p>
                 </div>
@@ -173,3 +173,154 @@
 </body>
 
 </html>
+<script>
+    var qtdJogadores = 1;
+    var qtdVoltas = 1;
+    var qtdCavalos = 2;
+    var apostas = [];
+    var jogadores = [];
+    var cavalos = [];
+
+    function addJogador() {
+
+        if (qtdJogadores < 3) {
+            qtdJogadores++;
+
+            document.getElementById("jogador" + qtdJogadores).style.display = "flex";
+        }
+
+    }
+
+    function apostar() {
+
+        qtdVoltas = Number(document.getElementById("qtd_voltas").value);
+        qtdCavalos = Number(document.getElementById("qtd_cavalos").value);
+
+        if (qtdCavalos < 2 || qtdCavalos > 6) {
+            alert("Escolha entre 2 e 6 cavalos");
+            return;
+        }
+
+        jogadores = [];
+
+        for (var i = 1; i <= qtdJogadores; i++) {
+
+            var nomeJogador = document.getElementById("ipt_jogador" + i).value;
+
+            if (nomeJogador == "") {
+                nomeJogador = "Jogador " + i;
+            }
+
+            jogadores.push(nomeJogador);
+
+            document.getElementById("nomeJogadorAposta" + i).innerHTML = nomeJogador;
+        }
+
+        for (var i = qtdJogadores + 1; i <= 3; i++) {
+            document.getElementById("nomeJogadorAposta" + i).parentElement.style.display = "none";
+        }
+
+        for (var i = 1; i <= 6; i++) {
+
+            var cavalo = document.querySelector(".cavalosAposta .cavalo:nth-child(" + i + ")");
+
+            if (i <= qtdCavalos) {
+                cavalo.style.display = "flex";
+            } else {
+                cavalo.style.display = "none";
+            }
+
+        }
+
+        document.getElementById("CONFIG").style.display = "none";
+        document.getElementById("APOSTA").style.display = "flex";
+
+        apostas = [];
+
+        for (var i = 1; i <= qtdJogadores; i++) {
+
+            var nomeJogador = document.getElementById("ipt_jogador" + i).value;
+
+            if (nomeJogador == "") {
+                nomeJogador = "Jogador " + i;
+            }
+            apostas.push({
+                jogador: nomeJogador,
+                cavalo: i
+            });
+
+            document.getElementById("nomeJogadorAposta" + i).innerHTML = nomeJogador;
+        }
+    }
+
+    function iniciarCorrida() {
+
+        cavalos = [];
+
+        for (var i = 1; i <= qtdCavalos; i++) {
+
+            var input = document.getElementById("ipt_nomeCavalo" + i);
+
+            var nomeCavalo = input.value;
+
+            if (nomeCavalo == "") {
+                nomeCavalo = input.placeholder;
+            }
+
+            cavalos.push({
+                numero: i,
+                nome: nomeCavalo,
+                voltas: 0,
+                tempo: 0
+            });
+
+        }
+
+        document.getElementById("APOSTA").style.display = "none";
+        document.getElementById("CORRIDA").style.display = "flex";
+
+        setTimeout(function () {
+
+            for (var i = 0; i < cavalos.length; i++) {
+                cavalos[i].tempo = (Math.random() * 99 + 1).toFixed(1);
+            }
+
+            cavalos.sort(function (a, b) {
+                return a.tempo - b.tempo;
+            });
+
+            function acharJogadorDoCavalo(numeroCavalo) {
+                for (var i = 0; i < apostas.length; i++) {
+                    if (apostas[i].cavalo == numeroCavalo) {
+                        return apostas[i].jogador;
+                    }
+                }
+                return "Sem jogador";
+            }
+
+            document.querySelector("#primeiro .nome").innerHTML =
+                cavalos[0].nome + " (" + acharJogadorDoCavalo(cavalos[0].numero) + ")";
+
+            document.querySelector("#primeiro .tempo").innerHTML = cavalos[0].tempo + "s";
+
+            document.querySelector("#segundo .nome").innerHTML =
+                cavalos[1].nome + " (" + acharJogadorDoCavalo(cavalos[1].numero) + ")";
+
+            document.querySelector("#segundo .tempo").innerHTML = cavalos[1].tempo + "s";
+
+            if (cavalos.length >= 3) {
+                document.querySelector("#terceiro .nome").innerHTML =
+                    cavalos[2].nome + " (" + acharJogadorDoCavalo(cavalos[2].numero) + ")";
+
+                document.querySelector("#terceiro .tempo").innerHTML = cavalos[2].tempo + "s";
+            } else {
+                document.querySelector("#terceiro .nome").innerHTML = "-";
+                document.querySelector("#terceiro .tempo").innerHTML = "-";
+            }
+
+            document.getElementById("CORRIDA").style.display = "none";
+            document.getElementById("PODIO").style.display = "flex";
+
+        }, 5000);
+    }
+</script>

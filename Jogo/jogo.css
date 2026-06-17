@@ -13,7 +13,7 @@
 
 #CONFIG {
     background-image: url(./imgs/Casino_Background.jpg);
-    display: none;
+    display: flex;
 }
 
 #APOSTA {
@@ -30,7 +30,7 @@
 
 #PODIO {
     background-image: url(./imgs/Podio_Gif.gif);
-    display: flex;
+    display: none;
 }
 
 input {
@@ -259,4 +259,21 @@ input#qtd_cavalos {
     color: white;
     padding: 2px 5px;
     font-size: 12px;
+}
+
+#PODIO {
+color: white;
+align-items: center;
+justify-content: center;
+}
+
+.podio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    border: solid white;
 }
