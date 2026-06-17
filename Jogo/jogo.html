@@ -19,17 +19,17 @@
                     <div class="jogador" id="jogador1" style="display: flex;">
                         <img src="./imgs/Jogaror_Icon.png" id="jogadorImage" style="width: 100px; height: 100px;">
                         500
-                        <input type="text" id="ipt_jogador1" placeholder="Jogador1" style="width: 100px;">
+                        <input type="text" id="ipt_jogador1" placeholder="Jogador1">
                     </div>
                     <div class="jogador" id="jogador2" style="display: none;">
                         <img src="./imgs/Jogaror_Icon.png" id="jogadorImage" style="width: 100px; height: 100px;">
                         500
-                        <input type="text" id="ipt_jogador2" placeholder="Jogador2" style="width: 100px;">
+                        <input type="text" id="ipt_jogador2" placeholder="Jogador2">
                     </div>
                     <div class="jogador" id="jogador3" style="display: none;">
                         <img src="./imgs/Jogaror_Icon.png" id="jogadorImage" style="width: 100px; height: 100px;">
                         500
-                        <input type="text" id="ipt_jogador3" placeholder="Jogador3" style="width: 100px;">
+                        <input type="text" id="ipt_jogador3" placeholder="Jogador3">
                     </div>
                 </div>
                 <button onclick="addJogador()">Adcionar Jogadores</button>
@@ -39,7 +39,7 @@
                 </div>
                 <div id="cavalos" style="display: flex; flex-direction: column; text-align: center;">
                     Quantidade de Cavalos
-                    <input type="number" id="qtd_voltas" placeholder="Mínimo 1 e Máximo 6" min="1" max="6">
+                    <input type="number" id="qtd_cavalos" placeholder="Mínimo 1 e Máximo 6" min="1" max="6">
                 </div>
                 <button onclick="apostar('APOSTA')">apostar</button>
             </div>
@@ -48,9 +48,57 @@
 
     <div class="background" id="APOSTA">
         <div class="fadeAposta">
-            <div class="cavalosAposta"></div>
-            <div class="jogadorAposta"></div>
+            <div class="cavalosAposta">
+                <div class="cavalo" id="1">
+                    <img id="IconCavalo"src="./imgs/Cavalo_Preto_Icon.png">
+                <input type="text" id="ipt_nomeCavalo1" placeholder="Destruidor de Sonhos">
+                </div>
+                <div class="cavalo" id="2">
+                    <img id="IconCavalo" src="./imgs/Cavalo_Branco_Icon.png">
+                <input type="text" id="ipt_nomeCavalo2" placeholder="Sr. Vale a Pena">
+                </div>
+                <div class="cavalo" id="3">
+                    <img id="IconCavalo" src="./imgs/Cavalo_Roxo_Icon.png">
+                <input type="text" id="ipt_nomeCavalo3" placeholder="Inferno pelo Clima">
+                </div>
+                <div class="cavalo" id="4">
+                    <img id="IconCavalo" src="./imgs/Cavalo_Verde_Icon.png">
+                <input type="text" id="ipt_nomeCavalo4" placeholder="Dinheiro Fácil/Idiota">
+                </div>
+                <div class="cavalo" id="5">
+                    <img id="IconCavalo" src="./imgs/Cavalo_Vermelho_Icon.png">
+                <input type="text" id="ipt_nomeCavalo5" placeholder="Quente e Incomodado">
+                </div>
+                <div class="cavalo" id="6">
+                    <img id="IconCavalo" src="./imgs/Cavalo_Amarelo_Icon.png">
+                <input type="text" id="ipt_nomeCavalo6" placeholder="Pangaré Magrelo">
+                </div>
+            </div>
+            <div class="jogadorAposta">
+                    <div id="jogadoresAposta">
+                    <div class="jogador" id="jogador1" style="display: flex;">
+                        <img src="./imgs/Jogaror_Icon.png" id="jogadorImage" style="width: 100px; height: 100px;">
+                        <div id="nomeJogadorAposta1" style="color: white; margin-bottom: 10px;">Grupo1</div>
+                        500
+                    </div>
+                    <div class="jogador" id="jogador2" style="display: flex;">
+                        <img src="./imgs/Jogaror_Icon.png" id="jogadorImage" style="width: 100px; height: 100px;">
+                        <div id="nomeJogadorAposta2" style="color: white; margin-bottom: 10px;">Grupo6</div>
+                        500
+                    </div>
+                    <div class="jogador" id="jogador3" style="display: flex;">
+                        <img src="./imgs/Jogaror_Icon.png" id="jogadorImage" style="width: 100px; height: 100px;">
+                        <div id="nomeJogadorAposta3" style="color: white; margin-bottom: 10px;">Grupo8</div>
+                        500
+                    </div>
+                </div>
+                <button onclick="jogar('CORRIDA')">Jogar</button>
+            </div>
         </div>
+    </div>
+
+    <div class="background" id="CORRIDA">
+        
     </div>
 </body>
 
